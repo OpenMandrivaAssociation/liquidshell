@@ -70,7 +70,7 @@ Main Features:
 %files
 %doc README
 %license COPYING
-%{_kf5_bindir}/%{name}
-%{_kf5_applicationsdir}/org.kde.liquidshell.desktop
-%{_kf5_iconsdir}/hicolor/48x48/apps/liquidshell.png
-%{_kf5_notifydir}/liquidshell.notifyrc
+#{_kf5_bindir}/%{name}
+#{_kf5_applicationsdir}/org.kde.liquidshell.desktop
+#{_kf5_iconsdir}/hicolor/48x48/apps/liquidshell.png
+#{_kf5_notifydir}/liquidshell.notifyrc
