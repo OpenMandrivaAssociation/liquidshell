@@ -5,7 +5,7 @@ Summary:        Alternative desktop replacement for Plasma, Qt and KF5 based
 License:        GPL-3.0
 Group:          System/GUI/KDE
 URL:            https://github.com/KDE/liquidshell
-Source:         https://github.com/KDE/liquidshell/archive/VERSION_%{version}.tar.gz
+Source:         https://github.com/KDE/liquidshell/archive/VERSION_%{version}/%{name}-VERSION_%{version}.tar.gz
 Patch0:         Fix-compile-with-newer-Qt.patch
 Patch1:         startkde-was-changed-to-startplasma-x11.patch
 
