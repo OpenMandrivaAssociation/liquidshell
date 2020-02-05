@@ -1,0 +1,51 @@
+From d12f28a56a2ea5d003b6410ec2d217bd258e11ad Mon Sep 17 00:00:00 2001
+From: Martin Koller <kollix@aon.at>
+Date: Sun, 13 Oct 2019 18:05:36 +0200
+Subject: Fix compile with newer Qt
+
+---
+ Network.cxx     | 2 +-
+ Network.hxx     | 1 +
+ NetworkList.cxx | 1 +
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/Network.cxx b/Network.cxx
+index abc40db..35e6c02 100644
+--- a/Network.cxx
++++ b/Network.cxx
+@@ -111,7 +111,7 @@ void Network::checkState()
+     {
+       NetworkManager::AccessPoint::Ptr accessPoint = dev->activeAccessPoint();
+       int signalStrength = accessPoint.isNull() ? 0 : accessPoint->signalStrength();
+-      int x = std::round(signalStrength / 25.0) * 25;
++      int x = qRound(signalStrength / 25.0) * 25;
+       pixmap = QIcon::fromTheme(QString("network-wireless-connected-%1").arg(x)).pixmap(size());
+ 
+       if ( !accessPoint.isNull() )
+diff --git a/Network.hxx b/Network.hxx
+index 8ca9af5..fea929d 100644
+--- a/Network.hxx
++++ b/Network.hxx
+@@ -25,6 +25,7 @@
+ 
+ #include <SysTrayItem.hxx>
+ #include <NetworkList.hxx>
++#include <QPointer>
+ #include <QTimer>
+ #include <QPixmap>
+ 
+diff --git a/NetworkList.cxx b/NetworkList.cxx
+index f5d4ccd..1acbc53 100644
+--- a/NetworkList.cxx
++++ b/NetworkList.cxx
+@@ -23,6 +23,7 @@
+ #include <QCheckBox>
+ #include <QToolButton>
+ #include <QScrollBar>
++#include <QTimer>
+ #include <QDebug>
+ 
+ #include <KLocalizedString>
+-- 
+cgit v1.1
+
