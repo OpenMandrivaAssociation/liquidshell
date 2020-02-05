@@ -72,5 +72,5 @@ Main Features:
 %license COPYING
 %{_bindir}/liquidshell
 %{_datadir}/applications/org.kde.liquidshell.desktop
-%{_iconsdir}/icons/hicolor/48x48/apps/liquidshell.png
+%{_iconsdir}/hicolor/*/apps/liquidshell.png
 %{_datadir}/knotifications5/liquidshell.notifyrc
