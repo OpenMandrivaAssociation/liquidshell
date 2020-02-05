@@ -6,8 +6,7 @@ License:        GPL-3.0
 Group:          System/GUI/KDE
 URL:            https://github.com/KDE/liquidshell
 Source:         https://github.com/KDE/liquidshell/archive/VERSION_%{version}/%{name}-VERSION_%{version}.tar.gz
-Patch0:         Fix-compile-with-newer-Qt.patch
-Patch1:         startkde-was-changed-to-startplasma-x11.patch
+Patch0:         liquidshell-compile-with-new-qt-kde-openmandriva.patch
 
 BuildRequires:  pkgconfig(packagekitqt5)
 BuildRequires:  pkgconfig(bluez)
@@ -59,7 +58,7 @@ Main Features:
 
 %prep
 %setup -qn %{name}-VERSION_%{version}
-%autopatch -p1
+%autopatch -p0
 
 %build
 %cmake_kde5
