@@ -58,7 +58,7 @@ Main Features:
   LockLogout
 
 %prep
-%setup -q
+%setup -qn %{name}-VERSION_%{version}
 %autopatch -p1
 
 %build
