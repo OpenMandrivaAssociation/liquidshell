@@ -1,12 +1,11 @@
 Name:           liquidshell
-Version:        1.5
+Version:        1.6
 Release:        1
 Summary:        Alternative desktop replacement for Plasma, Qt and KF5 based
 License:        GPL-3.0
 Group:          System/GUI/KDE
 URL:            https://github.com/KDE/liquidshell
 Source:         https://github.com/KDE/liquidshell/archive/VERSION_%{version}/%{name}-VERSION_%{version}.tar.gz
-Patch0:         liquidshell-compile-with-new-qt-kde-openmandriva.patch
 
 BuildRequires:  pkgconfig(packagekitqt5)
 BuildRequires:  pkgconfig(bluez)
@@ -71,6 +70,8 @@ Main Features:
 %doc README
 %license COPYING
 %{_bindir}/liquidshell
+%{_bindir}/start_liquidshell
 %{_datadir}/applications/org.kde.liquidshell.desktop
 %{_iconsdir}/hicolor/*/apps/liquidshell.png
 %{_datadir}/knotifications5/liquidshell.notifyrc
+%{_datadir}/xsessions/%{name}-session.desktop
