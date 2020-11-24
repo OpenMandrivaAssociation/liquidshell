@@ -65,7 +65,9 @@ Main Features:
 %install
 %ninja_install -C build
 
-%files
+%find_lang %{name}
+
+%files -f %{name}.lang
 %doc README
 %license COPYING
 %{_bindir}/liquidshell
