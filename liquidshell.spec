@@ -1,11 +1,11 @@
 Name:           liquidshell
-Version:        1.6
+Version:        1.7.2
 Release:        1
 Summary:        Alternative desktop replacement for Plasma, Qt and KF5 based
 License:        GPL-3.0
 Group:          System/GUI/KDE
 URL:            https://github.com/KDE/liquidshell
-Source:         https://github.com/KDE/liquidshell/archive/VERSION_%{version}/%{name}-VERSION_%{version}.tar.gz
+Source:         https://github.com/KDE/liquidshell/archive/VERSION_%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(packagekitqt5)
 BuildRequires:  pkgconfig(bluez)
@@ -56,8 +56,7 @@ Main Features:
   LockLogout
 
 %prep
-%setup -qn %{name}-VERSION_%{version}
-%autopatch -p0
+%autosetup -p1
 
 %build
 %cmake_kde5
