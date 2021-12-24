@@ -1,5 +1,5 @@
 Name:           liquidshell
-Version:        1.7.2
+Version:        1.8
 Release:        1
 Summary:        Alternative desktop replacement for Plasma, Qt and KF5 based
 License:        GPL-3.0
@@ -29,6 +29,7 @@ BuildRequires:  cmake(KF5NetworkManagerQt)
 BuildRequires:  cmake(KF5Solid)
 BuildRequires:  cmake(Qt5Widgets)
 BuildRequires:  cmake(Qt5X11Extras)
+BuildRequires:  cmake(Qt5ThemeSupport)
 
 %description
 liquidshell is a basic Desktop Shell implemented using QtWidgets. 
@@ -76,3 +77,4 @@ Main Features:
 %{_iconsdir}/hicolor/*/apps/liquidshell.png
 %{_datadir}/knotifications5/liquidshell.notifyrc
 %{_datadir}/xsessions/%{name}-session.desktop
+%{_datadir}/metainfo/org.kde.liquidshell.appdata.xml
