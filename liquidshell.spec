@@ -1,5 +1,5 @@
 Name:           liquidshell
-Version:        1.7.2
+Version:        1.8
 Release:        1
 Summary:        Alternative desktop replacement for Plasma, Qt and KF5 based
 License:        GPL-3.0
