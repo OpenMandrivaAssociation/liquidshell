@@ -77,3 +77,4 @@ Main Features:
 %{_iconsdir}/hicolor/*/apps/liquidshell.png
 %{_datadir}/knotifications5/liquidshell.notifyrc
 %{_datadir}/xsessions/%{name}-session.desktop
+%{_datadir}/metainfo/org.kde.liquidshell.appdata.xml
