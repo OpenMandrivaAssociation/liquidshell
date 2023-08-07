@@ -1,6 +1,6 @@
 Name:           liquidshell
-Version:        1.8.1
-Release:        2
+Version:        1.9.0
+Release:        1
 Summary:        Alternative desktop replacement for Plasma, Qt and KF5 based
 License:        GPL-3.0
 Group:          System/GUI/KDE
@@ -66,10 +66,9 @@ Main Features:
 %install
 %ninja_install -C build
 
-#%find_lang %{name}
+%find_lang %{name}
 
-#%files -f %{name}.lang
-%files
+%files -f %{name}.lang
 %doc README
 %license COPYING
 %{_bindir}/liquidshell
