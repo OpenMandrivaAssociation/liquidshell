@@ -29,7 +29,7 @@ BuildRequires:  cmake(KF6NetworkManagerQt)
 BuildRequires:  cmake(KF6Solid)
 BuildRequires:  cmake(Qt6Widgets)
 #BuildRequires:  cmake(Qt5X11Extras)
-BuildRequires:  cmake(Qt6ThemeSupport)
+#BuildRequires:  cmake(Qt6ThemeSupport)
 
 %description
 liquidshell is a basic Desktop Shell implemented using QtWidgets. 
