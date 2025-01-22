@@ -57,7 +57,7 @@ Main Features:
   LockLogout
 
 %prep
-%autosetup -p1
+%autosetup %{name}-v%{version} -p1
 
 %cmake -G Ninja
 
