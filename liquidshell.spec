@@ -1,39 +1,40 @@
 Name:           liquidshell
-Version:        1.9.0
+Version:        1.10.0
 Release:        1
-Summary:        Alternative desktop replacement for Plasma, Qt and KF5 based
+Summary:        Alternative desktop replacement for Plasma, Qt and KF6 based
 License:        GPL-3.0
 Group:          System/GUI/KDE
 URL:            https://github.com/KDE/liquidshell
-Source:         https://github.com/KDE/liquidshell/archive/VERSION_%{version}/%{name}-%{version}.tar.xz
+Source0:         https://invent.kde.org/system/liquidshell/-/archive/v%{version}/liquidshell-v%{version}.tar.bz2
 
-BuildRequires:  pkgconfig(packagekitqt5)
+BuildRequires:  pkgconfig(packagekitqt6)
 BuildRequires:  pkgconfig(bluez)
-BuildRequires:  cmake(KF5BluezQt)
-BuildRequires:  cmake(KF5Archive)
-BuildRequires:  cmake(KF5KCMUtils)
-BuildRequires:  cmake(KF5Config)
-BuildRequires:  cmake(KF5Crash)
-BuildRequires:  cmake(KF5DBusAddons)
-BuildRequires:  cmake(KF5DocTools)
-BuildRequires:  cmake(KF5I18n)
-BuildRequires:  cmake(KF5IconThemes)
-BuildRequires:  cmake(KF5KIO)
-BuildRequires:  cmake(KF5ItemViews)
-BuildRequires:  cmake(KF5NewStuff)
-BuildRequires:  cmake(KF5Notifications)
-BuildRequires:  cmake(KF5Service)
-BuildRequires:  cmake(KF5WidgetsAddons)
-BuildRequires:  cmake(KF5WindowSystem)
-BuildRequires:  cmake(KF5NetworkManagerQt)
-BuildRequires:  cmake(KF5Solid)
-BuildRequires:  cmake(Qt5Widgets)
-BuildRequires:  cmake(Qt5X11Extras)
-BuildRequires:  cmake(Qt5ThemeSupport)
+BuildRequires:  cmake(KF6BluezQt)
+BuildRequires:  cmake(KF6Archive)
+BuildRequires:  cmake(KF6KCMUtils)
+BuildRequires:  cmake(KF6Config)
+BuildRequires:  cmake(KF6Crash)
+BuildRequires:  cmake(KF6DBusAddons)
+BuildRequires:  cmake(KF6DocTools)
+BuildRequires:  cmake(KF6I18n)
+BuildRequires:  cmake(KF6IconThemes)
+BuildRequires:  cmake(KF6KIO)
+BuildRequires:  cmake(KF6ItemViews)
+BuildRequires:  cmake(KF6NewStuff)
+BuildRequires:  cmake(KF6Notifications)
+BuildRequires:  cmake(KF6StatusNotifierItem)
+BuildRequires:  cmake(KF6Service)
+BuildRequires:  cmake(KF6WidgetsAddons)
+BuildRequires:  cmake(KF6WindowSystem)
+BuildRequires:  cmake(KF6NetworkManagerQt)
+BuildRequires:  cmake(KF6Solid)
+BuildRequires:  cmake(Qt6Widgets)
+#BuildRequires:  cmake(Qt5X11Extras)
+#BuildRequires:  cmake(Qt6ThemeSupport)
 
 %description
 liquidshell is a basic Desktop Shell implemented using QtWidgets. 
-Alternative desktop replacement for Plasma, Qt and KF5 based. 
+Alternative desktop replacement for Plasma, Qt and KF6 based. 
 It using QtWidgets instead of QtQuick to ensure hardware acceleration is not required
 
 Main Features:
@@ -57,11 +58,12 @@ Main Features:
   LockLogout
 
 %prep
-%autosetup -p1
+%autosetup -n %{name}-v%{version} -p1
+
+%cmake -G Ninja
 
 %build
-%cmake_kde5
-%ninja_build
+%ninja_build -C build
 
 %install
 %ninja_install -C build
@@ -75,6 +77,6 @@ Main Features:
 %{_bindir}/start_liquidshell
 %{_datadir}/applications/org.kde.liquidshell.desktop
 %{_iconsdir}/hicolor/*/apps/liquidshell.png
-%{_datadir}/knotifications5/liquidshell.notifyrc
+%{_datadir}/knotifications6/liquidshell.notifyrc
 %{_datadir}/xsessions/%{name}-session.desktop
 %{_datadir}/metainfo/org.kde.liquidshell.appdata.xml
